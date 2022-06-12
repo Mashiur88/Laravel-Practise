@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Mashiur_laravel/resources/views/layouts/app.blade.php</file>
-            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Mashiur_laravel/resources/views/userlist.blade.php</file>
-            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Mashiur_laravel/routes/web.php</file>
-            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Mashiur_laravel/resources/views/auth/login.blade.php</file>
-            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Mashiur_laravel/public/js/Address.js</file>
-            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Mashiur_laravel/app/Providers/RouteServiceProvider.php</file>
-            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Mashiur_laravel/app/Http/Controllers/UserController.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/resources/views/layouts/app.blade.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/routes/web.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/app/Http/Controllers/UserController.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/resources/views/auth/register.blade.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/resources/views/userlist.blade.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/app/Http/Controllers/Auth/RegisterController.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/resources/views/edit.blade.php</file>
+            <file>file:/D:/xampp%207.4.1/htdocs/Swapnoloke_Mashiur/Laravel-Practise/Mashiur_laravel/resources/views/modalAddress.blade.php</file>
         </group>
     </open-files>
 </project-private>

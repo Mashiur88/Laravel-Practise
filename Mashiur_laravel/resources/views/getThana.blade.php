@@ -1,14 +1,12 @@
 @if(!empty($thana)) 
 
-         echo "<option value='0'>Select Thana</option>";
+         @php echo "<option value='0'>Select Thana</option>"; @endphp
     @foreach($thana as $row)
         
-            echo "<option value=".$row['id'].">". $row['name'] ."</option>";
+          <option value=" {{ $row['id'] }}">{{ $row['name'] }}</option>
     @endforeach           
 
 @else
-
-    echo "<option value='0'>No Thana Found</option>";
-
+    @php echo "<option value='0'>No Thana Found</option>"; @endphp
 @endif    
 

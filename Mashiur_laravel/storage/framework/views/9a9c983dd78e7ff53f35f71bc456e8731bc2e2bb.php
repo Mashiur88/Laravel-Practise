@@ -27,9 +27,9 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -54,9 +54,9 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -81,9 +81,9 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -109,9 +109,9 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -137,9 +137,9 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -161,13 +161,13 @@ endif;
 unset($__errorArgs, $__bag); ?>" name="password_confirmation" value="<?php echo e(old('password_confirmation')); ?>" autocomplete="new-password">
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="gender" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Gender')); ?></label>
 
                             <div class="col-md-6">
                                 <div class="form-check">
-                                <input id="male" type="radio" class="form-check-input <?php $__errorArgs = ['gender'];
+                                    <input id="male" type="radio" class="form-check-input <?php $__errorArgs = ['gender'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -177,7 +177,7 @@ endif;
 unset($__errorArgs, $__bag); ?>"  name="gender" value="1" autocomplete="male" autofocus><label class="form-check-label" for="male">Male</label>
                                 </div>
                                 <div class="form-check">
-                                <input id="female" type="radio" class="form-check-input <?php $__errorArgs = ['gender'];
+                                    <input id="female" type="radio" class="form-check-input <?php $__errorArgs = ['gender'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -191,16 +191,16 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="division" class="col-md-4 col-form-label text-md-right <?php $__errorArgs = ['division'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -215,7 +215,7 @@ unset($__errorArgs, $__bag); ?>"><?php echo e(__('Division')); ?></label>
                                 <select class="custom-select" id="division" name="division" onchange="showDistrict(this.value)">
                                     <option value='0'>Select Division</option>
                                     <?php $__currentLoopData = $division; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $div): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                         <?php echo "<option value=".$div['id'].">". $div['name'] ."</option>"; ?>
+                                        <?php echo "<option value=".$div['id'].">". $div['name'] ."</option>"; ?>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                                    
                                 </select>
 
@@ -224,16 +224,16 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="district" class="col-md-4 col-form-label text-md-right <?php $__errorArgs = ['district'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -254,16 +254,16 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="thana" class="col-md-4 col-form-label text-md-right <?php $__errorArgs = ['thana'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -284,16 +284,16 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="address" class="col-md-4 col-form-label text-md-right <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -312,22 +312,22 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="status" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Status')); ?></label>
 
                             <div class="col-md-6">
                                 <div class="form-check">
-                                <input id="active" type="radio" class="form-check-input <?php $__errorArgs = ['status'];
+                                    <input id="active" type="radio" class="form-check-input <?php $__errorArgs = ['status'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -337,7 +337,7 @@ endif;
 unset($__errorArgs, $__bag); ?>" name="status" value="1" autocomplete="active" autofocus><label class="form-check-label" for="active">Active</label>
                                 </div>
                                 <div class="form-check">
-                                <input id="inactive" type="radio" class=" form-check-input <?php $__errorArgs = ['status'];
+                                    <input id="inactive" type="radio" class=" form-check-input <?php $__errorArgs = ['status'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -351,16 +351,16 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-  
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -376,8 +376,56 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+function showDistrict(id)
+{
+    var url = "<?php echo e(url('/address/district/')); ?>/" + id;
+//    window.alert(url);
+//    console.log("Hello World");
+    if (id === 0)
+    {
+        document.getElementById("district").innerHTML = "<option value=''>No District Found</option>";
+        document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
+        return;
+    }
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function ()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            document.getElementById("district").innerHTML = this.responseText;
+            document.getElementById("thana").innerHTML = "<option value=''>Select Thana</option>";
+        }
+    }
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+    
+function showThana(id)
+{  //name = document.getElementById("division").value;
+//window.alert(id);
+    var url = "<?php echo e(url('/address/thana/')); ?>/" + id;
+    if (id === 0)   
+    {
+        document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
+        return;
+    }
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function ()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            document.getElementById("thana").innerHTML = this.responseText;
+        }
+    }
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}   
+
+</script>
 <?php $__env->stopSection(); ?>
 <script src="<?php echo e(asset('public/js/Address.js')); ?>" ></script>
 
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Mashiur_laravel\resources\views/auth/register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Laravel-Practise\Mashiur_laravel\resources\views/auth/register.blade.php ENDPATH**/ ?>

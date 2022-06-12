@@ -60,4 +60,4 @@
         </div>
     </body>
 </html>
-<?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Mashiur_laravel\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions/views/minimal.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Laravel-Practise\Mashiur_laravel\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions/views/minimal.blade.php ENDPATH**/ ?>

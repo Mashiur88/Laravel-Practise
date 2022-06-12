@@ -1,9 +1,9 @@
 @if (!empty($districts)) 
 
-         echo "<option value='0'>Select District</option>";
+         @php echo "<option value='0'>Select District</option>"; @endphp
          
     @foreach($districts as $row)         
-            echo "<option value=".$row['id'].">". $row['name'] ."</option>";
+           @php  echo "<option value=".$row['id'].">". $row['name'] ."</option>"; @endphp
     @endforeach        
 
 @else

@@ -49,22 +49,21 @@ class RegisterController extends Controller
 //        $thana = Thana::where('id',$id)->get();
         //echo "<pre>";
         //print_r($division); exit;
-        return view('auth.register')->with('division',$division);        
+        return view('auth.register')->with('division',$division);
     }
-    
+
     public function getDistrict($id)
     {
-        dd($id);
         $districts = District::where('division_id',$id)->get();
-        return view('getDistrict')->with('districts',$district);
+        return view('getDistrict')->with('districts',$districts);
     }
     public function getThana($id)
     {
         $thanas = Thana::where('district_id',$id)->get();
         return view('getThana')->with('thana',$thanas);
     }
-    
-    
+
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -92,7 +91,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],            
+            'last_name' => $data['last_name'],
             'user_name' => $data['user_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
