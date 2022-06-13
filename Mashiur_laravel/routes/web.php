@@ -16,7 +16,7 @@ use App\Http\Controllers\Auth\RegisterController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashBoard');
 });
 
 Route::get('/user/dashboard','UserController@viewDashboard')->name('user.dashboard');
@@ -26,8 +26,6 @@ Route::get('/user/list','UserController@userlist')->name('user.list');
 Route::post('/user/search','UserController@searchUser')->name('user.search');
 
 Route::get('/address/modal/{id}','UserController@showModal')->name('address.modal');
-
-
 
 
 Route::get('/edit/district/{id}', 'UserController@editDistrict')->name('edit.district');

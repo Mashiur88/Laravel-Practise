@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
 <div class="container">
@@ -60,7 +60,7 @@
                                     <input id="male" type="radio" class="form-check-input @error('gender') is-invalid @enderror"  name="gender" value="1"  autocomplete="male" {{ ($user['gender'] == 1) ? 'checked' : ''}} autofocus><label class="form-check-label" for="male">Male</label>
                                 </div>
                                 <div class="form-check">
-                                    <input id="female" type="radio" class="form-check-input @error('gender') is-invalid @enderror" name="gender" value="2" autocomplete="female"  {{ ($user['gender'] == 0) ? 'checked' : ''}} autofocus><label class="form-check-label" for="female">Female</label>
+                                    <input id="female" type="radio" class="form-check-input @error('gender') is-invalid @enderror" name="gender" value="2" autocomplete="female"  {{ ($user['gender'] == 2) ? 'checked' : ''}} autofocus><label class="form-check-label" for="female">Female</label>
                                 </div>
                                 @error('gender')
                                 <span class="invalid-feedback" role="alert">

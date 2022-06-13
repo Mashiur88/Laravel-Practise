@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
 <div class="container">
@@ -202,7 +202,7 @@
         </div>
     </div>
 </div>
-
+@endsection
 <script type="text/javascript">
 function showDistrict(id)
 {
@@ -250,6 +250,6 @@ function showThana(id)
 }   
 
 </script>
-@endsection
+
 <script src="{{ asset('public/js/Address.js') }}" ></script>
 

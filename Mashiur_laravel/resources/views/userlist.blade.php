@@ -1,11 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
-
-<div class="container-fluid p-0 m-0">
-
-    <div class="container-fluid text-center bg-info">
-
+<div class="container">
+    <div class="row justify-content-center">
+ 
         <form method="POST" action="{{ route('user.search') }}">
             {{ csrf_field() }}
             <div class="row mb-3">
@@ -92,23 +90,6 @@
                                   </div>
                               </div>
                           </form>   -->  --}}
-        {{--
-        <!--             @php
-                    //($pageno%3==0) ? $x :
-                    $y2 = ceil($result['pageno'] / 3) * 3;
-                    $x = (empty($result['pageno']) || ($result['pageno'] > 0 && $result['pageno'] <= 3)) ? 1 : (($result['pageno'] > 3 && $result['pageno'] % 3 == 0) ? ($result['pageno'] - 2) : (floor($result['pageno'] / 3) * 3) + 1);
-                    $y = (empty($result['pageno']) || ($result['pageno'] > 0 && $result['pageno'] <= 3)) ? ($result['pageCount'] < 3 ? $result['pageCount'] : 3) : ($result['pageCount'] < $y2 ? $result['pageCount'] : $y2);
-                    echo '<ul class="pagination">';
-                    echo $x > 1 ? '<li class="page-item"><a class="page-link" href="userlist.php?pageno=1&limit=' . $result['limit'] . '"><<</a></li>' : '';
-                    echo $x > 1 ? '<li class="page-item"><a class="page-link" href="userlist.php?pageno=' . ($x - 1) . '&limit=' . $result['limit'] . '">Prev</a></li>' : '';
-                    for ($i = $x; $i <= $y; $i++) {
-                        echo '<li class="page-item"><a class="page-link" href="userlist.php?pageno=' . $i . '&limit=' . $result['limit'] . '">' . $i . '</a></li>';
-                    }
-                    echo $y < $result['pageCount'] ? '<li class="page-item"><a class="page-link" href="userlist.php?pageno=' . ($y + 1) . '&limit= ' . $result['limit'] . '">Next</a></li>' : '';
-                    echo $y < $result['pageCount'] ? '<li class="page-item"><a class="page-link" href="userlist.php?pageno=' . ($result['pageCount']) . '&limit= ' . $result['limit'] . '">>></a></li>' : '';
-                    echo '</ul>';
-                    @endphp  
-                </div>   -->  --}}
     </div>
 </div>
 <!-- Modal -->

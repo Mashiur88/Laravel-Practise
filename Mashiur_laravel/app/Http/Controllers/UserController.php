@@ -11,10 +11,6 @@ use App\Thana;
 class UserController extends Controller
 {
     //
-    public function viewDashboard()
-    {
-        return view('user.dashboard');
-    }
     public function showArray()
     {
         $list =  Userlist::leftJoin('divisions','divisions.id','=','userlists.division')

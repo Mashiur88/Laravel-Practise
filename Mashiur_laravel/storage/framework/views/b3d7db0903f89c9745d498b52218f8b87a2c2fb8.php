@@ -116,7 +116,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="gender" value="2" autocomplete="female"  <?php echo e(($user['gender'] == 0) ? 'checked' : ''); ?> autofocus><label class="form-check-label" for="female">Female</label>
+unset($__errorArgs, $__bag); ?>" name="gender" value="2" autocomplete="female"  <?php echo e(($user['gender'] == 2) ? 'checked' : ''); ?> autofocus><label class="form-check-label" for="female">Female</label>
                                 </div>
                                 <?php $__errorArgs = ['gender'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -375,4 +375,4 @@ unset($__errorArgs, $__bag); ?>
 <script src="<?php echo e(asset('public/js/Address.js')); ?>" ></script>
 
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Laravel-Practise\Mashiur_laravel\resources\views/edit.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app1', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Laravel-Practise\Mashiur_laravel\resources\views/edit.blade.php ENDPATH**/ ?>

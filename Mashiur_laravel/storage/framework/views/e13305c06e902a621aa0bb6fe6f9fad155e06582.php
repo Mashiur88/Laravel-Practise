@@ -44,11 +44,13 @@
                 text-align: center;
             }
 
-            .title {
+            .title 
+            {
                 font-size: 84px;
             }
 
-            .links > a {
+            .links > a 
+            {
                 color: #636b6f;
                 padding: 0 25px;
                 font-size: 13px;

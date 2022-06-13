@@ -1,11 +1,9 @@
 
 
 <?php $__env->startSection('content'); ?>
-
-<div class="container-fluid p-0 m-0">
-
-    <div class="container-fluid text-center bg-info">
-
+<div class="container">
+    <div class="row justify-content-center">
+ 
         <form method="POST" action="<?php echo e(route('user.search')); ?>">
             <?php echo e(csrf_field()); ?>
 
@@ -72,7 +70,6 @@
 
 
         
-        
     </div>
 </div>
 <!-- Modal -->
@@ -121,4 +118,4 @@
     }
 </script>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Laravel-Practise\Mashiur_laravel\resources\views/userlist.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app1', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp 7.4.1\htdocs\Swapnoloke_Mashiur\Laravel-Practise\Mashiur_laravel\resources\views/userlist.blade.php ENDPATH**/ ?>
