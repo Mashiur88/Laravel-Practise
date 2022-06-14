@@ -33,6 +33,24 @@
                 <li class="nav-header">Pages</li>
 
                 <li class="nav-item">
+                    <a href="{{ route('gallery') }}" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>Gallery</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('about') }}" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>About</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('user.arrayShow') }}" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>ShowArray</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('user.list') }}" class="nav-link">
                         <i class="fas fa-circle nav-icon"></i>
                         <p>UserList</p>

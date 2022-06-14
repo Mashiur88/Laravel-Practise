@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AjaxreqController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,12 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function () {
     return view('dashBoard');
 });
+
+Route::get('/changstat/{id}/{stat}/{btn}','AjaxreqController@reqhandle')->name('change.status');
+
+Route::get('/about','PageController@viewAbout')->name('about');
+Route::get('/gallery','PageController@viewGallery')->name('gallery');
+Route::post('/gallery/upload',[PageController::class,'uploadPhoto'])->name('upload');
 
 Route::get('/user/dashboard','UserController@viewDashboard')->name('user.dashboard');
 Route::get('/user/array','UserController@showArray')->name('user.arrayShow');

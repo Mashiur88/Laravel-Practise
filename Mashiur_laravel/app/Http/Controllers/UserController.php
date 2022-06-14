@@ -24,9 +24,17 @@ class UserController extends Controller
         //return $list;
         return view('Array.arrayShow')->with('Aarray',$list);
     }
-    public function userlist()
+    public function userlist(Request $request)
     {
-        $userlist = User::all();
+        print_r($request->key);
+        
+        if(!empty($key))
+        {
+            $userlist = User::where('first_name','like','%'.$key.'%')
+                             ->orwhere('last_name','like','%'.$key.'%')
+                             ->get();
+        }
+        $userlist = User::paginate(1);
         return view('userlist')->with('users',$userlist);
     }
     
@@ -34,11 +42,15 @@ class UserController extends Controller
     {
         //$name = Input::get('name');
         $key = $request->search;
+        $url = url("/user/list")."?key = ".$key;
+        //echo $url;
+        redirect($url);
         //print_r($key); exit;
-        $userlist = User::where('first_name','like','%'.$key.'%')
-                    ->orwhere('last_name','like','%'.$key.'%')
-                    ->get();
-        return view('userlist')->with('users',$userlist);
+        //redirect()->route('user.list',['key'=>$key]);
+//        $userlist = User::where('first_name','like','%'.$key.'%')
+//                    ->orwhere('last_name','like','%'.$key.'%')      
+//                    ->get();
+//        return view('userlist')->with('users',$userlist);
     }
     
     
