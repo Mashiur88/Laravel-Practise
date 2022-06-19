@@ -215,7 +215,7 @@ unset($__errorArgs, $__bag); ?>"><?php echo e(__('Division')); ?></label>
                                 <select class="custom-select" id="division" name="division" onchange="showDistrict(this.value)">
                                     <option value='0'>Select Division</option>
                                     <?php $__currentLoopData = $division; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $div): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                                        <?php echo "<option value=".$div['id'].">". $div['name'] ."</option>"; ?>
+                                    <?php echo "<option value=".$div['id'].">". $div['name'] ."</option>"; ?>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                                    
                                 </select>
 
@@ -378,50 +378,51 @@ unset($__errorArgs, $__bag); ?>
 </div>
 <?php $__env->stopSection(); ?>
 <script type="text/javascript">
-function showDistrict(id)
-{
-    var url = "<?php echo e(url('/address/district/')); ?>/" + id;
-//    window.alert(url);
-//    console.log("Hello World");
-    if (id === 0)
+    function showDistrict(id)
     {
-        document.getElementById("district").innerHTML = "<option value=''>No District Found</option>";
-        document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
-        return;
-    }
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function ()
-    {
-        if (this.readyState == 4 && this.status == 200)
+
+        var url = "<?php echo e(url('/address/district/')); ?>/" + id;
+        window.alert(id);
+//        console.log("Hello World");
+        if (id === 0)
         {
-            document.getElementById("district").innerHTML = this.responseText;
-            document.getElementById("thana").innerHTML = "<option value=''>Select Thana</option>";
+            document.getElementById("district").innerHTML = "<option value=''>No District Found</option>";
+            document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
+            return;
         }
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function ()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                document.getElementById("district").innerHTML = this.responseText;
+                document.getElementById("thana").innerHTML = "<option value=''>Select Thana</option>";
+            }
+        }
+        xhttp.open("GET", url, true);
+        xhttp.send();
     }
-    xhttp.open("GET", url, true);
-    xhttp.send();
-}
-    
-function showThana(id)
-{  //name = document.getElementById("division").value;
+
+    function showThana(id)
+    {  //name = document.getElementById("division").value;
 //window.alert(id);
-    var url = "<?php echo e(url('/address/thana/')); ?>/" + id;
-    if (id === 0)   
-    {
-        document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
-        return;
-    }
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function ()
-    {
-        if (this.readyState == 4 && this.status == 200)
+        var url = "<?php echo e(url('/address/thana/')); ?>/" + id;
+        if (id === 0)
         {
-            document.getElementById("thana").innerHTML = this.responseText;
+            document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
+            return;
         }
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function ()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                document.getElementById("thana").innerHTML = this.responseText;
+            }
+        }
+        xhttp.open("GET", url, true);
+        xhttp.send();
     }
-    xhttp.open("GET", url, true);
-    xhttp.send();
-}   
 
 </script>
 

@@ -14,6 +14,7 @@ class PageController extends Controller
         $path = "https://static.toiimg.com/photo/msid-58515713,width-96,height-65.cms"; 
         return view('gallery')->with('path',$path);
     }
+    
     public function uploadPhoto(Request $request)
     {
         $hold = new Image();

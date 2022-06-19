@@ -10,20 +10,27 @@ use App\Thana;
 class AjaxreqController extends Controller
 {
     //
-    public function reqhandle($id,$status,$btn)
+    public function reqhandle(Request $request)
     {
+        $id = $request->id;
+        $status = $request->status;
+        $btn = $request->btn;
         
         $status =(int)!$status;
-        //print_r($status); exit;
-        $result = User::where('id',$id)->first();
-        
-        $result->status = "$status"; 
+        //
         //echo $id,$status,$btn; exit;
-        if($result->save())
+        $result = User::where('id',$id)->first();
+        //print_r($result); exit;
+        $result->status = $status; 
+        $bool = $result->save();
+        if($bool)
         {
-        return view('changStat')->with('id',$id)
-                    ->with('stat',$status)
-                    ->with('btn',$btn);
+         $txt = view('changStat',compact('id','status','btn'))->render(); 
+         return response()->json(['text' => $txt]);
+            
+//        return view('changStat')->with('id',$id)
+//                    ->with('stat',$status)
+//                    ->with('btn',$btn);
         }
     }
 }

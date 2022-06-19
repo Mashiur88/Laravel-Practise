@@ -15,12 +15,12 @@ use App\Http\Controllers\PageController;
 |
 */
 
-
 Route::get('/', function () {
     return view('dashBoard');
 });
 
-Route::get('/changstat/{id}/{stat}/{btn}','AjaxreqController@reqhandle')->name('change.status');
+//Route::get('/changstat/{id}/{stat}/{btn}','AjaxreqController@reqhandle')->name('change.status');
+Route::post('/changstat/','AjaxreqController@reqhandle')->name('change.status');
 
 Route::get('/about','PageController@viewAbout')->name('about');
 Route::get('/gallery','PageController@viewGallery')->name('gallery');
@@ -32,11 +32,15 @@ Route::get('/user/array','UserController@showArray')->name('user.arrayShow');
 Route::get('/user/list','UserController@userlist')->name('user.list');
 Route::post('/user/search','UserController@searchUser')->name('user.search');
 
-Route::get('/address/modal/{id}','UserController@showModal')->name('address.modal');
+Route::post('/address/modal','UserController@showModal')->name('address.modal');
+//Route::get('/address/modal/{id}','UserController@showModal')->name('address.modal');
 
+//Route::get('/edit/district/{id}', 'UserController@editDistrict')->name('edit.district');
+Route::post('/edit/district', 'UserController@editDistrict')->name('edit.district');
 
-Route::get('/edit/district/{id}', 'UserController@editDistrict')->name('edit.district');
-Route::get('/edit/thana/{id}', 'UserController@editThana')->name('edit.thana');
+//Route::get('/edit/thana/{id}', 'UserController@editThana')->name('edit.thana');
+Route::post('/edit/thana', 'UserController@editThana')->name('edit.thana');
+
 Route::get('user/delete/{id}','UserController@deleteUser')->name('user.delete');
 
 Auth::routes();
@@ -45,6 +49,5 @@ Route::get('/address/thana/{id}',[RegisterController::class,'getThana'])->name('
 
 Route::get('user/edit/{id}',[UserController::class,'editUser'])->name('user.edit');
 Route::post('user/update/',[UserController::class,'updateUser'])->name('user.update');
-
 
 Route::get('/home', 'HomeController@index')->name('home');

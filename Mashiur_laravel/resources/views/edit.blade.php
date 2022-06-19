@@ -3,7 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Update') }}</div>
 
@@ -78,12 +77,12 @@
                                     <option value='0'>Select Division</option>
                                     @else
                                     @foreach($division as $div)
-                                        <!-- @if($user['divId'] == $div['id'])
-                                                 @php echo "<option value=".$div['id'] ." selected>". $div['name']."</option>"; @endphp
-                                             @else
-                                                 @php echo "<option value=".$div['id'] ." >". $div['name']."</option>"; @endphp
-                                             @endif-->
-                                        <option value="{{ $div['id'] }}" {{ ($user['divId'] == $div['id']) ? 'selected' : '' }}>{{ $div['name'] }}</option>
+                                    <!-- @if($user['divId'] == $div['id'])
+                                             @php echo "<option value=".$div['id'] ." selected>". $div['name']."</option>"; @endphp
+                                         @else
+                                             @php echo "<option value=".$div['id'] ." >". $div['name']."</option>"; @endphp
+                                         @endif-->
+                                    <option value="{{ $div['id'] }}" {{ ($user['divId'] == $div['id']) ? 'selected' : '' }}>{{ $div['name'] }}</option>
                                     @endforeach  
                                     @endif
                                 </select>
@@ -179,54 +178,90 @@
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
 <script type="text/javascript">
     function showDistrict(id)
     {
-        var url = "{{ url('/edit/district/') }}/" + id;
-        window.alert(url);
-//    console.log("Hello World");
-        if (id === 0)
+        window.alert(id);
+        var url = "{{ URL::to('/edit/district') }}";
+        $.ajax({
+                type:'POST',
+                url:url,
+                data:{
+                'id': id
+                },
+                headers:
         {
-            document.getElementById("district").innerHTML = "<option value=''>No District Found</option>";
-            document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
-            return;
-        }
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function ()
-        {
-            if (this.readyState == 4 && this.status == 200)
-            {
-                document.getElementById("district").innerHTML = this.responseText;
-                document.getElementById("thana").innerHTML = "<option value=''>Select Thana</option>";
-            }
-        }
-        xhttp.open("GET", url, true);
-        xhttp.send();
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+                success:function(res) 
+                {
+                console.log(res);
+                $("#district").html(res.text);
+                $("#thana").html("<option value=''>Select Thana</option>");
+                }
+        });
+        
+//        var url = "{{ url('/edit/district/') }}/" + id;
+//        window.alert(url);
+//        console.log("Hello World");
+//        if (id === 0)
+//        {
+//            document.getElementById("district").innerHTML = "<option value=''>No District Found</option>";
+//            document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
+//            return;
+//        }
+//        const xhttp = new XMLHttpRequest();
+//        xhttp.onreadystatechange = function ()
+//        {
+//            if (this.readyState == 4 && this.status == 200)
+//            {
+//                document.getElementById("district").innerHTML = this.responseText;
+//                document.getElementById("thana").innerHTML = "<option value=''>Select Thana</option>";
+//            }
+//        }
+//        xhttp.open("GET", url, true);
+//        xhttp.send();
     }
 
     function showThana(id)
-    {  //name = document.getElementById("division").value;
-//window.alert(id);
-        var url = "{{url('/edit/thana/')}}/" + id;
-        if (id === 0)
+    {   //name = document.getElementById("division").value;
+        window.alert(id);
+        var url = "{{ URL::to('/edit/thana') }}";
+        $.ajax({
+                type:'POST',
+                url:url,
+                data:{
+                'id': id
+                },
+                headers:
         {
-            document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
-            return;
-        }
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function ()
-        {
-            if (this.readyState == 4 && this.status == 200)
-            {
-                document.getElementById("thana").innerHTML = this.responseText;
-            }
-        }
-        xhttp.open("GET", url, true);
-        xhttp.send();
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+                success:function(res) 
+                {
+                console.log(res);
+                $("#thana").html(res.text);
+                }
+        });
+//        var url = "{{url('/edit/thana/')}}/" + id;
+//        if (id === 0)
+//        {
+//            document.getElementById("thana").innerHTML = "<option value=''>No Thana Found</option>";
+//            return;
+//        }
+//        const xhttp = new XMLHttpRequest();
+//        xhttp.onreadystatechange = function ()
+//        {
+//            if (this.readyState == 4 && this.status == 200)
+//            {
+//                document.getElementById("thana").innerHTML = this.responseText;
+//            }
+//        }
+//        xhttp.open("GET", url, true);
+//        xhttp.send();
     }
 
 </script>

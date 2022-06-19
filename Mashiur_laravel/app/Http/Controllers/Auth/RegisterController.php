@@ -53,7 +53,7 @@ class RegisterController extends Controller
     }
 
     public function getDistrict($id)
-    {
+    {   
         $districts = District::where('division_id',$id)->get();
         return view('getDistrict')->with('districts',$districts);
     }
@@ -89,6 +89,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
