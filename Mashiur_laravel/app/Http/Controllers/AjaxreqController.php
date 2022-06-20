@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,14 +14,15 @@ class AjaxreqController extends Controller
         $id = $request->id;
         $status = $request->status;
         $btn = $request->btn;
-        
-        $status =(int)!$status;
+        $status = ($status == '1')? '0' : '1';
+        //$status =(int)!$status;
         //
-        //echo $id,$status,$btn; exit;
+        echo $id,$status,$btn; 
         $result = User::where('id',$id)->first();
         //print_r($result); exit;
         $result->status = $status; 
         $bool = $result->save();
+        echo $bool; 
         if($bool)
         {
          $txt = view('changStat',compact('id','status','btn'))->render(); 

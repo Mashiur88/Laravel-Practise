@@ -55,8 +55,8 @@
                             View Address
                         </button>
                     </td>
-                    <td id='cxngstatus<?php echo $id; ?>'><?php echo $temp1 ?></td>
-                    <td id='cxngstatusBtn<?php echo $id; ?>'><button class="btn btn-primary" onclick="changeStatus({{ $id }},{{ $stat }})">{{ ($row['status'] == '1') ? 'Inactive' : 'Active' }}</button></td>
+                    <td id='cxngstatus{{ $id }}'><?php echo $temp1 ?></td>
+                    <td id='cxngstatusBtn{{ $id }}'><button class="btn btn-primary" onclick="changeStatus({{ $id }}, {{ $stat }})">{{ ($stat == '1') ? 'Inactive' : 'Active' }}</button></td>
                     <td><a href = "{{ route('user.edit',$row['id']) }}"><i class="fa-solid fa-pen"></i></a></td> 
                     <td><a href = "{{ route('user.delete',$row['id']) }}" ><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
@@ -96,28 +96,24 @@
     </div>
 </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Full Address</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="addressModal">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Full Address</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="addressModal">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
-
-
-   
-@endsection
+    </div>
+</div>
 
 
 <script type="text/javascript">
@@ -132,16 +128,61 @@
             data:{
             'id': id
             },
+            headers:{
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(res)
+            {
+            console.log(res);
+            $("#addressModal").html(res.text);
+            }
+    });
+    }
+    function changeStatus(id, status)
+    {
+    //window.alert(status);
+    btn = 0;
+    var url = "{{ url('/changstat') }}";
+    $.ajax({
+    type:'POST',
+            url: url,
+            data:{
+            'id': id,
+                    'status': status,
+                    'btn': btn
+            },
             headers:
     {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
             success:function(res)
-            { 
+            {
             console.log(res);
-            $("#addressModal").html(res.text);
+            $("#cxngstatus" + id).html(res.text);
             }
     });
+    btn2 = 1;
+    var url2 = "{{ url('/changstat') }}";
+    $.ajax({
+    type:'POST',
+            url: url2,
+            data:{
+            'id': id,
+                    'status': status,
+                    'btn': btn2
+            },
+            headers:
+            {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(res) {
+            console.log(res);
+            $("#cxngstatusBtn" + id).html(res.text);
+            }
+    });
+    }
+
+
     //window.alert(url);
     //console.log(id);
     //        var url = "{{ url('/address/modal/') }}/" + id;
@@ -160,50 +201,8 @@
     //        }
     //        xhttp.open("GET", url, true);
     //        xhttp.send();
-    }
-    function changeStatus(id, status)
-    {
-        //window.alert(status);
-    btn = 0;
-    var url = "{{ url('/changstat') }}";
-            $.ajax({
-            type:'POST',
-                    url: url,
-                    data:{
-                    'id': id,
-                    'status': status,
-                    'btn': btn
-                    },
-                    headers:
-            {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-                    success:function(res) {
-                    console.log(res);
-                    $("#cxngstatus" + id).html(res.text);
-                    }
-                    });
-                    
-                    btn2 = 1;
-                    var url2 = "{{ url('/changstat') }}";
-                    $.ajax({
-                    type:'POST',
-                            url: url2,
-                            data:{
-                            'id': id,
-                            'status': status,
-                            'btn': btn2
-                            },
-                            headers:
-                    {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                            success:function(res) {
-                            //console.log(res);
-                            $("#cxngstatusBtn" + id).html(res.text);
-                            }
-                            });
-                    }
+
+
 //        btn = 0;
 //        btn2 = 1;
 //        var url = "{{ url('/changstat') }}/" + id + "/" + status + "/" + btn;
@@ -232,5 +231,6 @@
 //        }
 //        xhttp1.open("GET", url2, true);
 //        xhttp1.send();
-                                    
+
 </script>
+@endsection

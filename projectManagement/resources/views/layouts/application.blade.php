@@ -11,13 +11,16 @@
 
         <!-- Scripts -->
         <!--<script src="{{ asset('public/js/app.js') }}" defer></script>-->
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">-->
         <!-- Fonts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>  
+        <link rel="stylesheet" href="{{ asset('public/js/jquery-ui.css') }}">
+               
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{asset('public/plugins/fontawesome-free/css/all.min.css')}}">
         <!-- Ionicons -->
@@ -46,10 +49,10 @@
             </main>
             @include('layouts.footer')
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>-->
+        <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
         <!-- Bootstrap 4 -->
         <script src="{{asset('public/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <!-- ChartJS -->
@@ -57,10 +60,10 @@
         <!-- Sparkline -->
         <script src="{{asset('public/plugins/sparklines/sparkline.js')}}"></script>
         <!-- JQVMap -->
-        <script src="{{asset('public/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+<!--        <script src="{{asset('public/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
         <script src="{{asset('public/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="{{asset('public/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+         jQuery Knob Chart 
+        <script src="{{asset('public/plugins/jquery-knob/jquery.knob.min.js')}}"></script>-->
         <!-- daterangepicker -->
         <script src="{{asset('public/plugins/moment/moment.min.js')}}"></script>
         <script src="{{asset('public/plugins/daterangepicker/daterangepicker.js')}}"></script>
@@ -72,11 +75,9 @@
         <script src="{{asset('public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset('public/dist/js/adminlte.js')}}"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="{{asset('public/dist/js/demo.js')}}"></script>
+        
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <!--<script src="{{asset('public/dist/js/pages/dashboard.js')}}"></script>-->
-
 
     </body>
 </html>
