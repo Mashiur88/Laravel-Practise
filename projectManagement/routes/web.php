@@ -26,4 +26,6 @@ Route::post('/task/submit','TaskController@createTask')->name('task.submit');
 Route::get('/projectTask','WorkController@index')->name('projectTask');
 Route::post('/assignTask','WorkController@taskAssign')->name('assignTask');
 
+Route::get('/addTaskRow','WorkController@addRow')->name('addTaskRow');
+
 

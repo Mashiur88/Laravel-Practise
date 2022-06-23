@@ -59,9 +59,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('addTaskRow') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Next</p>
+                                <p>Next Task</p>
                             </a>
                         </li>
                     </ul>

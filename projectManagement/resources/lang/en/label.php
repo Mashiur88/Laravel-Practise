@@ -7,5 +7,9 @@
  */
 
 return[
-    
+    'task' => "Task",
+    'title' => [
+        'addtask' => 'Add Multiple Task Row'
+        
+    ]
 ];
