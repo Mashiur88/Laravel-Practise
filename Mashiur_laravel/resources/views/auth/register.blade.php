@@ -1,4 +1,4 @@
- @extends('layouts.app1')
+@extends('layouts.app1')
 
 @section('content')
 <div class="container">
@@ -187,7 +187,6 @@
                                 @enderror
                             </div>
                         </div>
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

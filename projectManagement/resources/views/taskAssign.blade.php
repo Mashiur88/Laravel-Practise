@@ -59,7 +59,24 @@
     </div>
 </div>
 <script>
+    
     $(document).ready(function () {
+        var options = {
+        "closeButton": true,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
 
         $(".datepick").datepicker({dateFormat: 'yy-mm-dd'});
 
@@ -109,8 +126,12 @@
                 dataType: 'json',
                 success: function (res) {
                     console.log(res);
-                    toastr.info('Data Successfully saved');
+                    toastr.success(res.msg,options);
+                },
+                error: function (res) {
+                   toastr.warning(res.msg,options);
                 }
+
 
             });
         });

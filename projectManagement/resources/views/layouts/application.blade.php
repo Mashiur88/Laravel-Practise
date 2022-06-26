@@ -17,7 +17,11 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>  
         <link rel="stylesheet" href="{{ asset('public/js/jquery-ui.css') }}">
-               
+
+
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> 
@@ -75,6 +79,7 @@
         <script src="{{asset('public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset('public/dist/js/adminlte.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <!--<script src="{{asset('public/dist/js/pages/dashboard.js')}}"></script>-->
