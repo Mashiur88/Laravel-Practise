@@ -19,7 +19,7 @@
             <button name="addBtn" id="addBtn" class="btn btn-outline-primary col-md-2"><i class="fa-solid fa-plus"></i>Add</button>
         </div>
         <div id="newRow">
-            
+
         </div>
     </div>
 
@@ -27,31 +27,57 @@
 <script>
     $(document).ready(function ()
     {
-        var store = [];
-        var i, value = 0;
-        $(document).on("change", '.task-list', function () {
-            $('select option:selected').each(function () {                
-                value = $(this).val();
-                store.push(value);
+//        var store = [];
+//        var i, value = 0, value1 = 0;
+        $(document).on("change", 'select', function ()
+        {
+            $('select option').prop('disabled', false);
+            $('select').each(function () {
+                var val = this.value;
+                $('select').not(this).find('option').filter(
+                        function () {
+                            return this.value === val;
+                        }).prop('disabled', true);
             });
         });
 
-        $('#addBtn').click(function () 
+
+
+//            if ($(this).val() !== 0)
+//            {
+//                value = $(this).val();
+//                store.push(value);
+//                if ($.inArray($(this).val(), store) > -1)
+//                {
+//                    $(this).prop('disabled', true);
+//                }
+//            }
+//            console.log(store.toString());
+
+        $('#addBtn').click(function ()
         {
             if ($('#newlab').length)
             {
                 i = $('.label').last().attr('serial');
-                value = $('.task-list').find(":selected").val();
-//                store.push(value);
-//                console.log(i);               
+//                value = $('.task-list').find(":selected").val();
+//                $("select.task-list option:selected").each(function () {
+//                    if ($(this).val() != 0)
+//                    {
+//                        if ($.inArray($(this).val(), store) > -1)
+//                        {
+//                            $(this).prop('disabled', true);
+//                        }
+//
+//                    }
+//
+//                });
+
             } 
             else
             {
                 i = $('.label').attr('serial');
-                value = $('.task-list').find(":selected").val();
-
             }
-            console.log(store.toString());
+            //console.log(store.toString());
             $.ajax({
                 type: "POST",
                 url: "{{ URL::to('/addNewRow') }}",
@@ -66,6 +92,17 @@
                     console.log(res);
 
                     $('#newRow').append(res.row);
+
+                    $('select option').prop('disabled', false);
+                    $('select').each(function () {
+                        var val = this.value;
+                        $('select').not(this).find('option').filter(
+                                function () {
+                                    return this.value === val;
+                                }).prop('disabled', true);
+                    });
+
+                    //$('.task-list').prop('disabled', true);
                     //$('#newRow ')
                     toastr.success(res.msg);
                 }
