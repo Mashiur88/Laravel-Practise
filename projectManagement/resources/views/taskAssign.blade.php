@@ -76,7 +76,7 @@
         "hideEasing": "linear",
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
-    }
+    };
 
         $(".datepick").datepicker({dateFormat: 'yy-mm-dd'});
 

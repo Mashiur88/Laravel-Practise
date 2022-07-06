@@ -9,7 +9,19 @@
 return[
     'task' => "Task",
     'title' => [
-        'addtask' => 'Add Multiple Task Row'
-        
+        'addtask' => 'Add Multiple Task Row',
+        'tasksummary' => 'Task Summary'
+    ],
+    'project' => "Project",
+    'fdate' => "From Date",
+    'tdate' => "To Date",
+    'thead' => [
+        'status' => 'Status',
+        'taskno' => "No of Task",
+        'sl' => "Serial No",
+        'tname' => "Task Name",
+        'tdetail' => "Task Detail",
+        'adate' => "Assign Date",
+        'edate' => "Deadline"
     ]
 ];

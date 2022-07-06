@@ -12,7 +12,7 @@
             <select name='taskList' id='taskList{{ $i }}' class="form-control col-md-4 task-list">
                 <option value="0">Select Task</option>
                 @foreach($tasks as $task)
-                <option value="{{ $task['id'] }}">{{ $task['task_name'] }}</option>
+                    <option value="{{ $task['id'] }}">{{ $task['task_name'] }}</option>
                 @endforeach
             </select>  
             <input type="date" name="assignDate" id="assignDate" class="form-control col-md-5">
