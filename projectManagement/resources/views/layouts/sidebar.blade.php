@@ -70,6 +70,12 @@
                                 <p>Task Summary</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('barChart') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bar Chart</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

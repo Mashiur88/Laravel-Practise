@@ -3,9 +3,10 @@
 @section('content')
 <div class="content-wrapper">
     <div class="content-header row">
-        <h1 class='col-md-4'>@lang('label.title.tasksummary')</h1>
+        <h1 class='col-md-6'>@lang('label.title.tasksummary')</h1>
         @if(!empty(Request::get('id')))
-           <a class='col-md-4 offset-md-4' name='pdf' id='pdf' href="{{ route('downloadPDF',['id' => Request::get('id'),'sdate' =>Request::get('sdate'),'edate' => Request::get('edate')]) }}"><button class='btn btn-primary'>Generate Pdf</button></a>
+        <a class='col-md-1.5' name='pdf' id='pdf' href="{{ route('downloadPDF',['id' => Request::get('id'),'sdate' => Request::get('sdate'),'edate' => Request::get('edate'),'type' => 'none']) }}"><button class='btn btn-primary'>Generate Pdf</button></a>
+        <a class='col-md-2' name='print' id='print' href="{{ route('downloadPDF',['id' => Request::get('id'),'sdate' => Request::get('sdate'),'edate' => Request::get('edate'),'type' => 'print']) }}"><button class='btn btn-primary'>Print Pdf</button></a>
         @endif
     </div>
     <div class='container'>
@@ -130,6 +131,7 @@
             $('#generateReport').show();
             $('#pdf').prop("class", "disable");
         });
+        
         
     });
 

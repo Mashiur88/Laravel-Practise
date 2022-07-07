@@ -82,6 +82,12 @@
 
 
         </div>
+        <script>
+            //DOMContentLoaded
+        window.addEventListener('DOMContentLoaded',() => {
+            window.print();
+        });
+        </script>
     </body>
 
 </html>

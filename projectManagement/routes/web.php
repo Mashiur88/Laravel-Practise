@@ -33,4 +33,5 @@ Route::post('/assignTask','WorkController@taskAssign')->name('assignTask');
 Route::get('/addTaskRow','WorkController@addRow')->name('addTaskRow');
 Route::post('/addNewRow','WorkController@addnewRow')->name('addNewRow');
 
-Route::get('/downloadPDF/{id}/{sdate}/{edate}','PdfController@PDFdownload')->name('downloadPDF');
+Route::get('/downloadPDF/{id}/{sdate}/{edate}/{type}','PdfController@PDFdownload')->name('downloadPDF');
+Route::get('/barChart','ChartController@viewChart')->name('barChart');
