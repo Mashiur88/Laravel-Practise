@@ -60,9 +60,7 @@ if (!empty($projectList)) {
         echo $noOfTask . ', ';
     }
 }
-?>
-                    ]
-                },
+?>]},
                 {
                     name: 'Paused',
                     data: [
@@ -77,7 +75,6 @@ if (!empty($projectList)) {
                     ]
                 }
             ],
-
 //            series: [{
 //
 //                    data: [{
